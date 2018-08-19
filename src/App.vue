@@ -1,17 +1,12 @@
 
 <template>
   <div id="app">
-    <router-link to="/">Path'/'</router-link>
-    <div>----------------</div>
-    <router-link to="/test">Path'/test'</router-link>
-    <div>----------------</div>
-    <router-link to="/board">Path'/board'</router-link>
-    <mainHeader msg="해더입니다." />
-    <mainLeft msg="레프트입니다." />
-    <HelloWorld msg="테스트 입니다."/>
-    <div>----------------</div>
-    <router-view></router-view> 
-    <div>----------------</div>
+    <mainHeader/>
+    <mainLeft/>
+    <div class="global-wrap">
+      <router-view></router-view> 
+    </div>
+    
   </div>
 </template>
 
@@ -31,4 +26,14 @@ export default {
 </script>
 
 <style>
+#app {
+  position: relative;
+  height: 100%;
+}
+.global-wrap {
+  position: relative;
+  min-height: 100%;
+  padding-top: 50px;
+  margin-left: 240px;
+}
 </style>
