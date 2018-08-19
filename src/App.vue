@@ -14,21 +14,19 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-import mainHeader from './components/main-header'
-import mainLeft from './components/main-left'
-
+import HelloWorld from "./components/HelloWorld";
+import mainHeader from "./components/main-header";
+import mainLeft from "./components/main-left";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     HelloWorld,
     mainHeader,
     mainLeft
   }
-}
+};
 </script>
 
 <style>
-
 </style>

@@ -6,10 +6,9 @@
 
 <script>
 export default {
-  name: 'main-header'
-}
+  name: "main-header"
+};
 </script>
 
 <style>
-
 </style>
