@@ -8,6 +8,11 @@ Vue.use(VueRouter)
 
 import './assets/css/main.css'
 
+import axios from 'axios'
+Vue.prototype.$http = axios
+
+Vue.prototype.$appUrl = 'http://localhost:8080'
+
 Vue.config.productionTip = false
 
 const router = new VueRouter({
