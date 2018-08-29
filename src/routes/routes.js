@@ -3,6 +3,7 @@ import routerTest from '../components/routerTest.vue'
 import NotFound from '../components/NotFound.vue'
 import board from '../components/view/board.vue'
 import detailView from '../components/view/detailView.vue'
+import tempPage from '../components/view/tempPage.vue'
 
 const routes = [{
         path: '/',
@@ -20,6 +21,11 @@ const routes = [{
         path: '/detailView',
         name: 'detailView',
         component: detailView
+    },
+    {
+        path: '/tempPage',
+        name: 'tempPage',
+        component: tempPage
     },
     {
         path: '*',

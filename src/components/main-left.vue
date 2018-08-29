@@ -5,7 +5,7 @@
         <button :class="{ 'on' : menuActive }" @click="menuActive = !menuActive" >대메뉴</button>
         <ul class="sidenav-submenu-list" :style="{'display': menuActive ? 'block' : 'none' }">
           <li>
-            <router-link to="/menu1" active-class="on">- 소메뉴1</router-link>
+            <router-link to="/tempPage" active-class="on">- 임시페이지</router-link>
           </li>
           <li>
             <router-link to="/menu2" active-class="on">- 소메뉴2</router-link>
