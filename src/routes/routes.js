@@ -4,27 +4,26 @@ import NotFound from '../components/NotFound.vue'
 import board from '../components/view/board.vue'
 import detailView from '../components/view/detailView.vue'
 
-const routes =[
-    {
-        path:'/',
+const routes = [{
+        path: '/',
         component: test
     },
     {
-        path:'/test',
+        path: '/test',
         component: routerTest
     },
     {
-        path:'/board',
+        path: '/board',
         component: board
     },
     {
-        path:'/detailView',
-        name:'detailView',
+        path: '/detailView',
+        name: 'detailView',
         component: detailView
     },
-    { 
-        path: '*', 
-        component: NotFound 
+    {
+        path: '*',
+        component: NotFound
     }
 ]
 

@@ -6,10 +6,9 @@
 
 <script>
 export default {
-  name: 'routerTest'
-}
+  name: "routerTest"
+};
 </script>
 
 <style>
-
 </style>

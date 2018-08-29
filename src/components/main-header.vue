@@ -39,7 +39,7 @@ export default {
   cursor: pointer;
   outline: 0;
 }
-.header .header-title > img{
+.header .header-title > img {
   vertical-align: middle;
 }
 

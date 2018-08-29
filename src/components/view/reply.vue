@@ -34,43 +34,39 @@
 </template>
 
 <script>
-  export default {
-    props: [
-    'bno'
-    ],
-    name: 'reply',
-    data(){
-        return{
-        replys:[],
-        replyContent:{boardNo: this.bno, replyNo: 0, replyGroup: 0},
-        replyID:[]
-      }
-
+export default {
+  props: ["bno"],
+  name: "reply",
+  data() {
+    return {
+      replys: [],
+      replyContent: { boardNo: this.bno, replyNo: 0, replyGroup: 0 },
+      replyID: []
+    };
+  },
+  created: function() {
+    this.replyData(this.bno);
+  },
+  methods: {
+    replyData: function(no) {
+      this.$http
+        .get("http://localhost:8080/board/4020/" + no)
+        .then(response => {
+          this.replys = response.data.replyList;
+        });
     },
-    created: function(){
-            this.replyData(this.bno);
-    },
-    methods: {
-        replyData: function (no) {
-        this.$http.get("http://localhost:8080/board/4020/" + no)
-            .then((response)  =>  {
-                this.replys = response.data.replyList;
-            })
-        },
-       replyInsert: function (replyNo, replyGroup) {
-         
-        this.replyContent.replyNo=replyNo;
-        this.replyContent.replyGroup=replyGroup;
+    replyInsert: function(replyNo, replyGroup) {
+      this.replyContent.replyNo = replyNo;
+      this.replyContent.replyGroup = replyGroup;
 
-       this.$http.post("http://localhost:8080/board/4021/", this.replyContent )
-           .then(()  =>  {
-               this.replyData(this.bno);
-           })
-       }
-       
+      this.$http
+        .post("http://localhost:8080/board/4021/", this.replyContent)
+        .then(() => {
+          this.replyData(this.bno);
+        });
     }
   }
+};
 </script>
 <style>
-
 </style>

@@ -13,36 +13,25 @@
 </template>
 
 <script>
-  export default {
-    name: 'boardDetail',
-    props: [
-    'bno'
-    ],
-    data: function () {
-        return {
-            boardDetail: []
-
-        }
-        
-    },
-    created: function(){
-            this.findByBoardList(this.bno);
-    },
-    methods: {
-        findByBoardList: function (no) {
-
-        this.$http.get(this.$appUrl+"/board/4012/" + no)
-            .then((response)  =>  {
-                this.boardDetail = response.data;
-                
-            })
-
-          
-        }
+export default {
+  name: "boardDetail",
+  props: ["bno"],
+  data: function() {
+    return {
+      boardDetail: []
+    };
+  },
+  created: function() {
+    this.findByBoardList(this.bno);
+  },
+  methods: {
+    findByBoardList: function(no) {
+      this.$http.get(this.$appUrl + "/board/4012/" + no).then(response => {
+        this.boardDetail = response.data;
+      });
     }
   }
-
+};
 </script>
 <style>
-
 </style>

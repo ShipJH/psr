@@ -49,70 +49,66 @@
   </div>
 </template>
 <script>
+export default {
+  name: "board",
+  data: function() {
+    return {
+      boardList: [],
+      searchInput: "",
+      searchSelect: "",
 
-  export default {
-    name: 'board',
-    data: function () {
-        return {
-            boardList: [],
-            searchInput:"",
-            searchSelect:"",
+      listCnt: 0,
+      pageNo: 1,
+      n: 11
+    };
+  },
+  created: function() {
+    this.findByBoardList();
+    this.searchSelect = "ALL";
+  },
+  methods: {
+    goPage: function(n) {
+      this.$http
+        .get(this.$appUrl + "/board/4010/01/" + n + "/제")
+        .then(response => {
+          this.boardList = response.data.boardList;
 
-            listCnt:0,
-            pageNo:1,
-            n:11
-
-        }
-         
+          this.listCnt = response.data.listCnt;
+        });
     },
-    created: function(){
-            this.findByBoardList();
-            this.searchSelect = "ALL";
+
+    searchKeyUp: function() {
+      this.findByBoardList();
     },
-    methods: {
 
-        goPage: function(n){
-            this.$http.get(this.$appUrl+"/board/4010/01/"+n+"/제")
-                .then((response)  =>  {
-                    this.boardList = response.data.boardList;
+    findByBoardList: function() {
+      if (this.searchInput != "") {
+        this.$http
+          .get(
+            this.$appUrl +
+              "/board/4010/" +
+              this.searchSelect +
+              "/" +
+              this.pageNo +
+              "/" +
+              this.searchInput
+          )
+          .then(response => {
+            this.boardList = response.data.boardList;
+          });
+      } else {
+        this.$http.get(this.$appUrl + "/board/4010/01/1/제").then(response => {
+          this.boardList = response.data.boardList;
 
-                    this.listCnt = response.data.listCnt;
-                    
-                })
-        },
-
-        searchKeyUp : function(){
-            this.findByBoardList();
-        },
-
-        findByBoardList: function () {
-
-            if(this.searchInput != ''){
-
-            this.$http.get(this.$appUrl+"/board/4010/"+this.searchSelect+"/"+this.pageNo+"/"+this.searchInput)
-                .then((response)  =>  {
-                    this.boardList = response.data.boardList;
-                    
-                })
-            }else{
-                this.$http.get(this.$appUrl+"/board/4010/01/1/제")
-                .then((response)  =>  {
-                    this.boardList = response.data.boardList;
-
-                    this.listCnt = response.data.listCnt;
-                    
-                })
-            }
-          
-        }
-        ,
-        goDetail: function(no) {
-            this.$router.push({name: 'detailView', query: { boardNo: no}});
-        }
+          this.listCnt = response.data.listCnt;
+        });
+      }
+    },
+    goDetail: function(no) {
+      this.$router.push({ name: "detailView", query: { boardNo: no } });
     }
   }
-
+};
 </script>
 <style>
-
 </style>

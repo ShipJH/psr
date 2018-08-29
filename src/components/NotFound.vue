@@ -6,10 +6,9 @@
 
 <script>
 export default {
-  name: 'erorr'
-}
+  name: "erorr"
+};
 </script>
 
 <style>
-
 </style>

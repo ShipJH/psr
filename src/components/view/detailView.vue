@@ -5,23 +5,20 @@
         </div>
 </template>
 <script>
-  import reply from './reply.vue'
-  import boardDetail from './boardDetail.vue'
-  export default {
-    name: 'detailView',
-    components:{
-        'reply': reply,
-        'boardDetail': boardDetail
-    },
-    data: function () {
-        return {
-            boardNo: this.$route.query.boardNo
-        }
-        
-    }
+import reply from "./reply.vue";
+import boardDetail from "./boardDetail.vue";
+export default {
+  name: "detailView",
+  components: {
+    reply: reply,
+    boardDetail: boardDetail
+  },
+  data: function() {
+    return {
+      boardNo: this.$route.query.boardNo
+    };
   }
-
+};
 </script>
 <style>
-
 </style>
