@@ -49,15 +49,15 @@
           </li>
           <li>
             <input type="checkbox" id="park-size-m" name="park-size">
-            <label for="park-size-s">준중형</label>
+            <label for="park-size-m">준중형</label>
           </li>
           <li>
             <input type="checkbox" id="park-size-l" name="park-size">
-            <label for="park-size-s">중형</label>
+            <label for="park-size-l">중형</label>
           </li>
           <li>
             <input type="checkbox" id="park-size-xl" name="park-size">
-            <label for="park-size-s">대형</label>
+            <label for="park-size-xl">대형</label>
           </li>
         </ul>
       </div>
@@ -102,6 +102,7 @@ export default {
 .content-wrap .content-body {
   width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 
 .content-wrap .content-slide {
@@ -113,21 +114,34 @@ export default {
   clear: both;
 }
 .content-wrap .image-list-wrap {
-  width: 440px;
-  margin: 30px auto;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 30px 0px;
   background-color: black;
 }
+
 .content-wrap .image-list-wrap > li {
   display: inline-block;
   margin-right: 10px;
 }
+
 .content-wrap .image-list-wrap > li:last-of-type {
   margin-right: 0px;
 }
+
 .content-wrap .content-select-wrap > h3 {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+.park-select-list{
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .park-select-list:after {
@@ -135,8 +149,10 @@ export default {
   display: block;
   clear: both;
 }
+
 .park-select-list>li{
   float: left;
-  margin-right: 30px;
+  margin-right: 50px;
 }
+
 </style>
