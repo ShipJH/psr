@@ -6,7 +6,6 @@
     <div class="global-wrap">
       <router-view></router-view> 
     </div>
-    
   </div>
 </template>
 
